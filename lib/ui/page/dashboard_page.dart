@@ -10,7 +10,7 @@ class DashboardPage extends StatelessWidget {
     return TemplatePage(
       titleBar: olympiadeCategories[olympiadeCategoryId - 1],
       actionBar: [
-        IndicatorCircleWidget(status: 2),
+        IndicatorCircleWidget(status: 0),
         const SizedBox(width: 14),
         GestureDetector(
           onTap: () {
