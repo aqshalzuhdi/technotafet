@@ -15,7 +15,7 @@ class IndicatorCircleWidget extends StatelessWidget {
       decoration: BoxDecoration(
         color: (status == 0)
             ? kRedColor
-            : ((status == 2) ? kWhiteColor : kGreenColor),
+            : ((status == 2) ? kGreyColor : kGreenColor),
         borderRadius: BorderRadius.circular(50),
       ),
     );
