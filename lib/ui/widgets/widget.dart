@@ -7,3 +7,4 @@ part 'exercise_widget.dart';
 part 'athlete_widget.dart';
 part 'textfield_widget.dart';
 part 'indicator_circle_widget.dart';
+part 'error_message_widget.dart';

@@ -24,37 +24,15 @@ class DashboardPage extends StatelessWidget {
         const SizedBox(width: 14),
       ],
       body: StreamBuilder<Query<AthleteEntity>>(
-        stream: AthleteService(store: store).readQueryStream(ExerciseEntity_
-                .category
-                .equals(olympiadeCategoryId) //filter by olympiade from button
-            ),
+        stream: AthleteService(store: store).readQueryStream(
+          ExerciseEntity_.category
+              .equals(olympiadeCategoryId), //filter by olympiade from button
+        ),
         builder: (context, snapshot) {
           // return Text('test');
           if (snapshot.hasData) {
             if (snapshot.data!.find().isEmpty) {
-              return Column(
-                children: [
-                  SizedBox(height: MediaQuery.of(context).size.height / 4),
-                  Icon(
-                    Icons.file_open_rounded,
-                    color: kBlackColor,
-                    size: 100,
-                  ),
-                  const SizedBox(height: 8),
-                  Text(
-                    'Data not available',
-                    style: blackTextStyle.copyWith(
-                      fontSize: 16,
-                      fontWeight: bold,
-                    ),
-                  ),
-                  const SizedBox(height: 4),
-                  Text(
-                    'Start Exercise now!',
-                    style: blackTextStyle,
-                  ),
-                ],
-              );
+              return const ErrorMessageWidget();
             }
 
             return Column(
@@ -68,8 +46,9 @@ class DashboardPage extends StatelessWidget {
                             onTap: () {
                               Get.to(
                                 ChartDetailPage(
-                                  exercise: e.exercises,
+                                  // exercise: e.exercises,
                                   athlete: e,
+                                  categoryId: olympiadeCategoryId,
                                   // athleteId: e.id,
                                   // categoryId: olympiadeCategoryId,
                                 ),
