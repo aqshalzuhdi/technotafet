@@ -2,13 +2,13 @@
 
 A new Flutter project.
 
-## ObjectBox commands
+# ObjectBox commands
 
 Run flutter pub run build_runner build to get objectbox configuration files
 
 To Replace objectbox, add --delete-conflicting-outputs
 
-### Getting Started
+## Getting Started
 
 This project is a starting point for a Flutter application.
 
